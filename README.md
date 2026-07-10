@@ -130,9 +130,3 @@ The dashboard will be available at `http://localhost:5173`.
 ## 📄 License
 
 This project is open source and available for personal and educational use. 
-
----
-
-## 🙌 Author
-
-Developed by **[Your Name]** — Developer | Cybersecurity Student | Content Creator
