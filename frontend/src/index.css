@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    background-color: #020617;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-800/60 rounded-xl;
+  }
+
+  .glass-panel-strong {
+    @apply bg-slate-900/80 backdrop-blur-2xl border border-slate-700/50 rounded-xl;
+  }
+
+  .metric-value {
+    @apply text-2xl font-semibold tracking-tight text-slate-100 font-mono;
+  }
+
+  .metric-label {
+    @apply text-xs font-medium text-slate-500 uppercase tracking-wider;
+  }
+
+  .status-dot {
+    @apply h-2 w-2 rounded-full inline-block;
+  }
+
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(245, 158, 11, 0.2), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* Enhanced animations */
+@keyframes beamFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+  75% { opacity: 0.95; }
+  85% { opacity: 0.8; }
+}
+
+@keyframes energyPulse {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes radarSweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes rotateGlow {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -12; }
+}
+
+@keyframes rainFall {
+  0% { transform: translateY(-10px); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(60px); opacity: 0; }
+}
+
+@keyframes fogDrift {
+  0%, 100% { transform: translateX(-5px); opacity: 0.3; }
+  50% { transform: translateX(5px); opacity: 0.5; }
+}
+
+@keyframes lightning {
+  0%, 90%, 100% { opacity: 0; }
+  92%, 96% { opacity: 0.8; }
+  94% { opacity: 1; }
+}
+
+.animate-beam-flicker { animation: beamFlicker 3s ease-in-out infinite; }
+.animate-energy-pulse { animation: energyPulse 2.5s ease-out infinite; }
+.animate-radar-sweep  { animation: radarSweep 4s ease-in-out infinite; }
+.animate-rotate-glow  { animation: rotateGlow 4s linear infinite; }
+.animate-dash         { animation: dash 1s linear infinite; }
+.animate-rain         { animation: rainFall 0.8s linear infinite; }
+.animate-fog          { animation: fogDrift 4s ease-in-out infinite; }
+.animate-lightning    { animation: lightning 5s ease-in-out infinite; }
