@@ -23,8 +23,8 @@ Built with a **Flask** backend simulation engine and a **React + Vite + Tailwind
 
 ```
 Automatic-Street-Light-Control-System/
-├── backend/                 # Flask simulation & REST API
-│   ├── app.py                # API routes
+├── backend/                   # Flask simulation & REST API
+│   ├── app.py                 # API routes
 │   ├── simulation.py          # Core simulation loop / state manager
 │   ├── decision_engine.py     # Brightness decision logic
 │   ├── sensor_simulator.py    # Simulated environmental sensors
@@ -32,7 +32,7 @@ Automatic-Street-Light-Control-System/
 │   ├── models.py              # StreetLight data model
 │   └── requirements.txt
 │
-└── frontend/                 # React + Vite dashboard
+└── frontend/                  # React + Vite dashboard
     ├── src/
     │   ├── App.jsx
     │   ├── api.js
@@ -129,7 +129,7 @@ The dashboard will be available at `http://localhost:5173`.
 
 ## 📄 License
 
-This project is open source and available for personal and educational use. Add a license of your choice (e.g., MIT) before public release.
+This project is open source and available for personal and educational use. 
 
 ---
 
